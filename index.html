@@ -9,12 +9,6 @@
 <body>
   <aside class="sidebar">
     <div class="brand">Research Report</div>
-    <div class="project-panel">
-      <label for="projectSelect">Проект</label>
-      <select id="projectSelect"></select>
-      <button id="addProjectBtn" type="button">Добавить новый проект</button>
-      <button id="deleteProjectBtn" type="button" hidden>Удалить локальный проект</button>
-    </div>
     <nav id="nav"></nav>
     <div class="sidebar-actions">
       <label class="file-label">
@@ -25,41 +19,12 @@
     </div>
   </aside>
 
-  <dialog id="projectDialog" class="project-dialog">
-    <form id="projectForm" method="dialog">
-      <h2>Добавить новый проект</h2>
-      <p class="muted">Загрузите четыре файла исследования. Проект сохранится в этом браузере и не изменит встроенные отчёты.</p>
-      <div class="form-grid">
-        <label>ID проекта <input id="newProjectId" name="projectId" placeholder="new-project-2026-07-01"></label>
-        <label>Название проекта <input id="newProjectName" name="projectName" placeholder="Заполнится из JSON, если оставить пустым"></label>
-        <label>Дата исследования <input id="newResearchDate" name="researchDate" type="date"></label>
-        <label>География <input id="newGeography" name="geography" placeholder="Заполнится из JSON, если оставить пустым"></label>
-      </div>
-      <div class="file-grid">
-        <label>report-data.json <input id="newReportDataFile" type="file" accept=".json,application/json" required></label>
-        <label>research-report.md <input id="newResearchReportFile" type="file" accept=".md,text/markdown,text/plain" required></label>
-        <label>assumptions-and-gaps.md <input id="newAssumptionsFile" type="file" accept=".md,text/markdown,text/plain" required></label>
-        <label>sources.csv <input id="newSourcesFile" type="file" accept=".csv,text/csv,text/plain" required></label>
-      </div>
-      <p class="warning">На GitHub Pages новый проект сохраняется в localStorage вашего браузера. Чтобы он стал общим для всех, добавьте его папку в репозиторий.</p>
-      <div class="dialog-actions">
-        <button value="cancel" type="button" id="cancelProjectBtn">Отмена</button>
-        <button type="submit">Создать проект</button>
-      </div>
-    </form>
-  </dialog>
-
   <main>
     <section class="hero">
       <p class="eyebrow">Маркетинговое исследование</p>
       <h1 id="projectName">Загрузите report-data.json</h1>
       <p id="projectMeta" class="muted"></p>
       <div id="confidenceBadge"></div>
-      <div class="hero-project-actions">
-        <span>Проекты переключаются в левой панели.</span>
-        <button id="addProjectHeroBtn" type="button">Добавить новый проект</button>
-      </div>
-      <div id="statusMessage" class="status" role="status" aria-live="polite"></div>
     </section>
     <div id="content"></div>
   </main>
